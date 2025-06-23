@@ -2,7 +2,7 @@ import React, { use, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import RateLimitedUI from "../components/RateLimitedUI";
 import { useState } from "react";
-import api from "../../network/api";
+import api from "../network/api";
 import toast from "react-hot-toast";
 import NoteCard from "../components/NoteCard";
 
@@ -15,7 +15,7 @@ const HomePage = () => {
     const fetchNotes = async () => {
       try {
         const res = await api.get("/notes");
-        // console.log(res.data);
+        console.log(res.data);
         setNotes(res.data);
         setIsRateLimited(false);
       } catch (error) {
